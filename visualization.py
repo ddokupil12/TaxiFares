@@ -7,23 +7,25 @@ from utils import preprocess
 
 
 # load first 500k entries of dataset
-df = pd.read_csv('train.csv', parse_dates=[2], nrows=500000, encoding='latin1')
+df = pd.read_csv('train.csv', parse_dates=[2], nrows=500000, encoding='utf-16')
 
 # print the first 5 rows of the dataset
 # ** YOUR CODE HERE **
 
-print(df.head(5))
+#print(df.head())
 
 # display histogram for fares and passenger count
 # ** YOUR CODE HERE **
 
-
+#x = df.hist(column='passenger_count')
+#plt.show()
 
 # statistical summary of dataset
 # ** YOUR CODE HERE **
 
-
+#df.describe()
 
 
 # print the number of missing values for each variable
 # ** YOUR CODE HERE **
+
