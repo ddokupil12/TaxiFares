@@ -10,8 +10,8 @@ def preprocess(df):
     # remove outliers in fare amount
     def remove_fare_amount_outliers(df):
         # ** YOUR CODE HERE **
-
-        return df
+        dfFilt = df[df['fare_amount'] != 0]
+        return dfFilt
 
     # replace outliers in passenger count with the mode
     def replace_passenger_count_outliers(df):
@@ -32,7 +32,10 @@ def preprocess(df):
         # only consider locations within New York City
         # ** YOUR CODE HERE **
 
-
+        df = df[df['pickup_longitude'].between(nyc_min_longitude,nyc_max_longitude)]
+        df = df[df['pickup_latitude'].between(nyc_min_latitude,nyc_max_latitude)]
+        df = df[df['dropoff_longitude'].between(nyc_min_longitude,nyc_max_longitude)]
+        df = df[df['dropoff_latitude'].between(nyc_min_latitude,nyc_max_latitude)]
         return df
 
 
