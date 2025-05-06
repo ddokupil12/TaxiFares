@@ -4,10 +4,13 @@ def preprocess(df):
     # remove missing values in the dataframe
     def remove_missing_values(df):
         # ** YOUR CODE HERE **
-        df = df[df['pickup_longitude'] != 0]
-        
+        dfNa = df.isna()
+        df = df[dfNa['pickup_longitude'] == False]
+        df = df[dfNa['pickup_latitude'] == False]
+        df = df[dfNa['dropoff_longitude'] == False]
+        df = df[dfNa['dropoff_latitude'] == False]
         return df
-
+    
     # remove outliers in fare amount
     def remove_fare_amount_outliers(df):
         # ** YOUR CODE HERE **
@@ -17,8 +20,6 @@ def preprocess(df):
     # replace outliers in passenger count with the mode
     def replace_passenger_count_outliers(df):
         # ** YOUR CODE HERE **
-        
-
 
         return df
 
