@@ -15,7 +15,7 @@ def preprocess(df):
     # remove outliers in fare amount
     def remove_fare_amount_outliers(df):
         # ** YOUR CODE HERE **
-
+        df = df[df['fare_amount'] != 0]
         return df
 
     # replace outliers in passenger count with the mode
