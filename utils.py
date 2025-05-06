@@ -59,14 +59,34 @@ def feature_engineer(df):
         # ** YOUR CODE HERE **
         # cols = df.columns.tolist()
         # print(df.dtypes)
-        print(df)
-        print(df.pickup_datetime)
-        tt = df['pickup_datetime'].timetuple
+        # print(df)
+        # print(df.pickup_datetime)
+        # tt = df['pickup_datetime'].timetuple
         # df['year'] = df['pickup_datetime'].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
         # df['year'] = datetime.strptime(str(df[2]), '%Y')
         # df['month'] = datetime.strptime(str(df[2]), '%m')
         # df['day'] = datetime.strptime(str(df[2]), '%d')
         # df['day_of_week'] = datetime.date.weekday(str(df[2]))
+        df['year'] = df['pickup_datetime'].dt.year
+        df['month'] = df['pickup_datetime'].dt.month
+        df['day'] = df.pickup_datetime.dt.day
+        df['weekday'] = df.pickup_datetime.dt.weekday
+        df['hour'] = df.pickup_datetime.dt.hour
+        df.drop(columns=['pickup_datetime'], inplace=True)
+        # print('df year', df['year'])
+        # print('df month', df['month'])
+        # print('df day', df['day'])
+        # print('df weekday', df['weekday'])
+        # print('df hour', df.hour)
+        # print('df', df)
+
+        try:
+            x = df['pickup_datetime']
+        except KeyError:
+            print("Good job!")
+        else:
+            raise ValueError("Column `pickup_datetime' still exists")
+
         # 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
         # df['hour'] = datetime.strptime(str(df[2]), '%H')
 
@@ -77,7 +97,8 @@ def feature_engineer(df):
         # print(asdf)
 
         #remove pickup_datetime column
-        # df = df.drop([2])
+        # df = df.drop(['pickup_datetime'])
+
 
         return df
 
