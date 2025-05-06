@@ -17,7 +17,8 @@ def preprocess(df):
     # replace outliers in passenger count with the mode
     def replace_passenger_count_outliers(df):
         # ** YOUR CODE HERE **
-        df['passenger_count'].replace(0, df['passenger_count'].mode(), inplace=True)
+        dfMode = max(df['passenger_count'].mode())
+        df = df['passenger_count'].replace(0, dfMode)
         return df
 
     # remove outliers in latitude and longitude
@@ -48,14 +49,15 @@ def feature_engineer(df):
     # create new columns for year, month, day, day of week and hour
     def create_time_features(df):
         # ** YOUR CODE HERE **
-        df['year'] = datetime.striptime(df['pickup_datetime'], format='%Y')
-        df['month'] = datetime.striptime(df['pickup_datetime'], format='%m')
-        df['day'] = datetime.striptime(df['pickup_datetime'], format='%d')
-        df['day_of_week'] = datetime.date.weekday(df['pickup_datetime']) 
+        print(type(df[2]))
+        # df['year'] = df[2].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
+        df['month'] = datetime.strptime(str(df[2]), '%m')
+        df['day'] = datetime.strptime(str(df[2]), '%d')
+        df['day_of_week'] = datetime.date.weekday(str(df[2]))
         # 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
-        df['hour'] = datetime.striptime(df['pickup_datetime'], format='%H')
+        df['hour'] = datetime.strptime(str(df[2]), '%H')
         #remove pickup_datetime column
-        df.drop(['pickup_datetime'], inplace=True)
+        df = df.drop([2])
         return df
 
     # function to calculate euclidean distance

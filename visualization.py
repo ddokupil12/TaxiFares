@@ -42,5 +42,3 @@ for col in df.columns:
     n_nan = df[col].isna().sum()
     n_zero = df[col].eq(0).sum() if pd.api.types.is_numeric_dtype(df[col]) else "N/A"
     print(f"{col}: NaN={n_nan}, Zero={n_zero}")
-
-
