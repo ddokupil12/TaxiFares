@@ -76,7 +76,7 @@ model.summary()
 
 
 #Basic idea of what we need
-hLayer1 = keras.layers.Dense(15, "linear")
+hLayer1 = Dense(15, "linear")
 
 
 
