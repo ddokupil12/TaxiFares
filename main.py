@@ -15,13 +15,14 @@ from utils import preprocess, feature_engineer
 
 try:
     print("Reading in the dataset.")
-    df = pd.read_csv('train.csv', parse_dates=['pickup_datetime'], nrows=500000)
+    df = pd.read_csv('train.csv', parse_dates=['pickup_datetime'], nrows=500000, encoding="utf-16")
 except:
     print("""
       Dataset not found in your computer.
       Please follow the instructions to download the dataset.
       """)
     quit()
+
 
 
 # Perform preprocessing and feature engineering
@@ -67,7 +68,7 @@ model = Sequential(
     Dense(3, activation="relu", name="hlayer2"),
     Dense(4, activation="relu", name="hlayer3"),
     Dense(5, name="output")
-  ]2
+  ]
 )
 # ** YOUR CODE HERE **
 
@@ -75,7 +76,7 @@ model.summary()
 
 
 #Basic idea of what we need
-hLayer1 = keras.layers.Dense(15, "linear") 
+hLayer1 = Dense(15, "linear")
 
 
 
