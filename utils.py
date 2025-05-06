@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 
 def preprocess(df):
     # remove missing values in the dataframe
@@ -16,7 +17,7 @@ def preprocess(df):
     # replace outliers in passenger count with the mode
     def replace_passenger_count_outliers(df):
         # ** YOUR CODE HERE **
-
+        df['passenger_count'].replace(0, df['passenger_count'].mode(), inplace=True)
         return df
 
     # remove outliers in latitude and longitude
@@ -47,7 +48,14 @@ def feature_engineer(df):
     # create new columns for year, month, day, day of week and hour
     def create_time_features(df):
         # ** YOUR CODE HERE **
-
+        df['year'] = datetime.striptime(df['pickup_datetime'], format='%Y')
+        df['month'] = datetime.striptime(df['pickup_datetime'], format='%m')
+        df['day'] = datetime.striptime(df['pickup_datetime'], format='%d')
+        df['day_of_week'] = datetime.date.weekday(df['pickup_datetime']) 
+        # 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+        df['hour'] = datetime.striptime(df['pickup_datetime'], format='%H')
+        #remove pickup_datetime column
+        df.drop(['pickup_datetime'], inplace=True)
         return df
 
     # function to calculate euclidean distance
