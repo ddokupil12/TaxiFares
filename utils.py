@@ -5,7 +5,11 @@ def preprocess(df):
     # remove missing values in the dataframe
     def remove_missing_values(df):
         # ** YOUR CODE HERE **
-
+        dfNa = df.isna()
+        df = df[dfNa['pickup_longitude'] == False]
+        df = df[dfNa['pickup_latitude'] == False]
+        df = df[dfNa['dropoff_longitude'] == False]
+        df = df[dfNa['dropoff_latitude'] == False]
         return df
 
     # remove outliers in fare amount
@@ -49,15 +53,24 @@ def feature_engineer(df):
     # create new columns for year, month, day, day of week and hour
     def create_time_features(df):
         # ** YOUR CODE HERE **
-        print(type(df[2]))
+        cols = df.columns.tolist()
+        print(cols)
         # df['year'] = df[2].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
-        df['month'] = datetime.strptime(str(df[2]), '%m')
-        df['day'] = datetime.strptime(str(df[2]), '%d')
-        df['day_of_week'] = datetime.date.weekday(str(df[2]))
+        # df['year'] = datetime.strptime(str(df[2]), '%Y')
+        # df['month'] = datetime.strptime(str(df[2]), '%m')
+        # df['day'] = datetime.strptime(str(df[2]), '%d')
+        # df['day_of_week'] = datetime.date.weekday(str(df[2]))
         # 0=Monday, 1=Tuesday, 2=Wednesday, 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
-        df['hour'] = datetime.strptime(str(df[2]), '%H')
+        # df['hour'] = datetime.strptime(str(df[2]), '%H')
+
+        # asdf = df.apply(lambda x: datetime.strptime(str(int(x)), '%Y-%m-%d %H:%M:%S %Z'))
+        # print(asdf)
+
+        # asdf = datetime.strptime( , '%Y-%m-%d %H:%M:%S %Z')
+        # print(asdf)
+
         #remove pickup_datetime column
-        df = df.drop([2])
+        # df = df.drop([2])
         return df
 
     # function to calculate euclidean distance
