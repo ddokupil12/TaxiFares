@@ -5,11 +5,11 @@ def preprocess(df):
     # remove missing values in the dataframe
     def remove_missing_values(df):
         # ** YOUR CODE HERE **
-        dfNa = df.isna()
-        df = df[dfNa['pickup_longitude'] == False]
-        df = df[dfNa['pickup_latitude'] == False]
-        df = df[dfNa['dropoff_longitude'] == False]
-        df = df[dfNa['dropoff_latitude'] == False]
+        # dfNa = df.isna()
+        # df = df[dfNa['pickup_longitude'] == False]
+        # df = df[dfNa['pickup_latitude'] == False]
+        # df = df[dfNa['dropoff_longitude'] == False]
+        # df = df[dfNa['dropoff_latitude'] == False]
         return df
 
     # remove outliers in fare amount
@@ -22,7 +22,7 @@ def preprocess(df):
     def replace_passenger_count_outliers(df):
         # ** YOUR CODE HERE **
         dfMode = max(df['passenger_count'].mode())
-        df = df['passenger_count'].replace(0, dfMode)
+        df['passenger_count'] = df['passenger_count'].replace(0, dfMode)
         return df
 
     # remove outliers in latitude and longitude
@@ -53,8 +53,11 @@ def feature_engineer(df):
     # create new columns for year, month, day, day of week and hour
     def create_time_features(df):
         # ** YOUR CODE HERE **
-        cols = df.columns.tolist()
-        print(cols)
+        # cols = df.columns.tolist()
+        # print(df.dtypes)
+        print(df)
+        print(df.pickup_datetime)
+        # tt = df['pickup_datetime'].timetuple
         # df['year'] = df[2].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
         # df['year'] = datetime.strptime(str(df[2]), '%Y')
         # df['month'] = datetime.strptime(str(df[2]), '%m')
@@ -71,6 +74,7 @@ def feature_engineer(df):
 
         #remove pickup_datetime column
         # df = df.drop([2])
+
         return df
 
     # function to calculate euclidean distance
@@ -80,7 +84,7 @@ def feature_engineer(df):
     # create new column for the distance travelled
     def create_pickup_dropoff_dist_features(df):
         # ** YOUR CODE HERE **
-        df['travel_distance'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], df['dropoff_latitude'], df['dropoff_longitude'])
+        df['travel_distance'] = euc_distance(df.pickup_latitude, df.pickup_longitude, df.dropoff_latitude, df.dropoff_longitude)
 
         return df
 
