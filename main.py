@@ -15,13 +15,14 @@ from utils import preprocess, feature_engineer
 
 try:
     print("Reading in the dataset.")
-    df = pd.read_csv('train.csv', parse_dates=['pickup_datetime'], nrows=500000, encoding='utf-16')
+    df = pd.read_csv('train.csv', parse_dates=['pickup_datetime'], nrows=500000, encoding="utf-16")
 except:
     print("""
       Dataset not found in your computer.
       Please follow the instructions to download the dataset.
       """)
     quit()
+
 
 
 # Perform preprocessing and feature engineering

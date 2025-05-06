@@ -60,10 +60,11 @@ def feature_engineer(df):
     # create new column for the distance travelled
     def create_pickup_dropoff_dist_features(df):
         # ** YOUR CODE HERE **
+        df['travel_distance'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], df['dropoff_latitude'], df['dropoff_longitude'])
 
         return df
 
-    # create new column for the distance away from airports
+    # create new columns for the distance away from airports
     def create_airport_dist_features(df):
         airports = {'JFK_Airport': (-73.78,40.643),
                     'Laguardia_Airport': (-73.87, 40.77),
@@ -71,6 +72,17 @@ def feature_engineer(df):
 
         # ** YOUR CODE HERE **
 
+        df['JFK_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['JFK_Airport'][0],airports['JFK_Airport'][1])
+
+        df['LGA_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['Laguardia_Airport'][0],airports['Laguardia_Airport'][1])
+
+        df['EWR_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['Newark_Airport'][0],airports['Newark_Airport'][1])
+
+        df['JFK_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['JFK_Airport'][0],airports['JFK_Airport'][1])
+
+        df['LGA_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['Laguardia_Airport'][0],airports['Laguardia_Airport'][1])
+
+        df['EWR_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['Newark_Airport'][0],airports['Newark_Airport'][1])
 
         return df
 
