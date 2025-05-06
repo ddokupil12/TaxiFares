@@ -14,8 +14,8 @@ def preprocess(df):
     # remove outliers in fare amount
     def remove_fare_amount_outliers(df):
         # ** YOUR CODE HERE **
-
-        return df
+        dfFilt = df[df['fare_amount'] != 0]
+        return dfFilt
 
     # replace outliers in passenger count with the mode
     def replace_passenger_count_outliers(df):
@@ -36,7 +36,10 @@ def preprocess(df):
         # only consider locations within New York City
         # ** YOUR CODE HERE **
 
-
+        df = df[df['pickup_longitude'].between(nyc_min_longitude,nyc_max_longitude)]
+        df = df[df['pickup_latitude'].between(nyc_min_latitude,nyc_max_latitude)]
+        df = df[df['dropoff_longitude'].between(nyc_min_longitude,nyc_max_longitude)]
+        df = df[df['dropoff_latitude'].between(nyc_min_latitude,nyc_max_latitude)]
         return df
 
 
@@ -61,10 +64,11 @@ def feature_engineer(df):
     # create new column for the distance travelled
     def create_pickup_dropoff_dist_features(df):
         # ** YOUR CODE HERE **
+        df['travel_distance'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], df['dropoff_latitude'], df['dropoff_longitude'])
 
         return df
 
-    # create new column for the distance away from airports
+    # create new columns for the distance away from airports
     def create_airport_dist_features(df):
         airports = {'JFK_Airport': (-73.78,40.643),
                     'Laguardia_Airport': (-73.87, 40.77),
@@ -72,6 +76,17 @@ def feature_engineer(df):
 
         # ** YOUR CODE HERE **
 
+        df['JFK_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['JFK_Airport'][0],airports['JFK_Airport'][1])
+
+        df['LGA_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['Laguardia_Airport'][0],airports['Laguardia_Airport'][1])
+
+        df['EWR_pickup'] = euc_distance(df['pickup_latitude'], df['pickup_longitude'], airports['Newark_Airport'][0],airports['Newark_Airport'][1])
+
+        df['JFK_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['JFK_Airport'][0],airports['JFK_Airport'][1])
+
+        df['LGA_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['Laguardia_Airport'][0],airports['Laguardia_Airport'][1])
+
+        df['EWR_dropoff'] = euc_distance(df['dropoff_latitude'], df['dropoff_longitude'], airports['Newark_Airport'][0],airports['Newark_Airport'][1])
 
         return df
 
