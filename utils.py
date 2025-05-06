@@ -5,11 +5,11 @@ def preprocess(df):
     # remove missing values in the dataframe
     def remove_missing_values(df):
         # ** YOUR CODE HERE **
-        # dfNa = df.isna()
-        # df = df[dfNa['pickup_longitude'] == False]
-        # df = df[dfNa['pickup_latitude'] == False]
-        # df = df[dfNa['dropoff_longitude'] == False]
-        # df = df[dfNa['dropoff_latitude'] == False]
+        dfNa = df.isna()
+        df = df[dfNa['pickup_longitude'] == False]
+        df = df[dfNa['pickup_latitude'] == False]
+        df = df[dfNa['dropoff_longitude'] == False]
+        df = df[dfNa['dropoff_latitude'] == False]
         return df
 
     # remove outliers in fare amount
@@ -61,8 +61,8 @@ def feature_engineer(df):
         # print(df.dtypes)
         print(df)
         print(df.pickup_datetime)
-        # tt = df['pickup_datetime'].timetuple
-        # df['year'] = df[2].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
+        tt = df['pickup_datetime'].timetuple
+        # df['year'] = df['pickup_datetime'].apply(lambda x: datetime.strptime(str(int(x)), '%Y'))
         # df['year'] = datetime.strptime(str(df[2]), '%Y')
         # df['month'] = datetime.strptime(str(df[2]), '%m')
         # df['day'] = datetime.strptime(str(df[2]), '%d')
