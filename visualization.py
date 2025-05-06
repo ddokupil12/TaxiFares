@@ -3,15 +3,16 @@ matplotlib.use("TkAgg")
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from utils import preprocess
+from utils import preprocess, feature_engineer
 
 
 # load first 500k entries of dataset
 df = pd.read_csv('train.csv', parse_dates=[2], nrows=500000, encoding='utf-16')
 
 
-print(df)
-
+# print(df)
+df = preprocess(df)
+df = feature_engineer(df)
 
 # print the first 5 rows of the dataset
 # ** YOUR CODE HERE **

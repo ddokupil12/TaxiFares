@@ -24,12 +24,12 @@ except:
     quit()
 
 
-print('pickup_datetime', df.pickup_datetime)
+# print('pickup_datetime', df.pickup_datetime)
 
 # Perform preprocessing and feature engineering
 # print('df types', df.dtypes)
 df = preprocess(df)
-print('preprocess', df)
+# print('preprocess', df)
 df = feature_engineer(df)
 
 # Scale the features
