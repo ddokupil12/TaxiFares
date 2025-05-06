@@ -68,7 +68,7 @@ model = Sequential(
     Dense(3, activation="relu", name="hlayer2"),
     Dense(4, activation="relu", name="hlayer3"),
     Dense(5, name="output")
-  ]2
+  ]
 )
 # ** YOUR CODE HERE **
 
@@ -76,7 +76,7 @@ model.summary()
 
 
 #Basic idea of what we need
-hLayer1 = keras.layers.Dense(15, "linear") 
+hLayer1 = keras.layers.Dense(15, "linear")
 
 
 
