@@ -4,13 +4,14 @@ matplotlib.use("TkAgg")
 print('more imports')
 from keras.models import Sequential
 from keras.layers import Dense
+from keras import Model
+from keras.optimizers import Adam
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import scale
 from sklearn.model_selection import train_test_split
 print('more imports')
-from sklearn.metrics import mean_squared_error
-
+# from sklearn.metrics import mean_squared_error
 from utils import preprocess, feature_engineer
 
 try:
@@ -67,10 +68,11 @@ training_set, testing_set = train_test_split(df,test_size=.33) #Not tested, chec
 # Build neural network in Keras
 model = Sequential(
   [
-    Dense(2, activation="relu", name= "hlayer1"),
-    Dense(3, activation="relu", name="hlayer2"),
-    Dense(4, activation="relu", name="hlayer3"),
-    Dense(5, name="output")
+    Dense(len(df.columns), activation="relu", name= "hlayer1"),
+    Dense(64, activation="relu", name="hlayer2"),
+    Dense(16, activation="relu", name="hlayer3"),
+    Dense(4, activation="relu", name="hlayer4"),
+    Dense(1, name="output")
   ]
 )
 # ** YOUR CODE HERE **
@@ -81,12 +83,22 @@ model.summary()
 #Basic idea of what we need
 hLayer1 = Dense(15, "linear")
 
+optim = Adam()
 
 
 # Compile and Train the model
 # ** YOUR CODE HERE **
 
+# 1) Use Keras' compile method
+model.compile(optimizer="Adam", loss="mean_squared_error", metrics=["root_mean_squared_error"])
 
+# 2) Use Keras' fit method to train the model
+input_ = training_set.drop(columns='fare_amount')
+labels = training_set['fare_amount']
+model.fit(epochs=10, x=input_, y=labels)
+
+# 3) Calculate loss using MSE
 
 # Evaluate the Model (RMSE)
 # ** YOUR CODE HERE **
+# Testing
