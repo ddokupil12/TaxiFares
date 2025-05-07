@@ -11,7 +11,7 @@ import numpy as np
 from sklearn.preprocessing import scale
 from sklearn.model_selection import train_test_split
 print('more imports')
-# from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error
 from utils import preprocess, feature_engineer
 
 try:
@@ -69,9 +69,9 @@ training_set, testing_set = train_test_split(df,test_size=.33) #Not tested, chec
 model = Sequential(
   [
     Dense(len(df.columns), activation="relu", name= "hlayer1"),
-    Dense(64, activation="relu", name="hlayer2"),
-    Dense(16, activation="relu", name="hlayer3"),
-    Dense(4, activation="relu", name="hlayer4"),
+    Dense(128, activation="relu", name="hlayer2"),
+    Dense(72, activation="relu", name="hlayer3"),
+    Dense(16, activation="relu", name="hlayer4"),
     Dense(1, name="output")
   ]
 )
@@ -102,3 +102,20 @@ model.fit(epochs=10, x=input_, y=labels)
 # Evaluate the Model (RMSE)
 # ** YOUR CODE HERE **
 # Testing
+# Evaluate the Model (RMSE)
+
+# Use the testing set to make predictions
+test_input = testing_set.drop(columns='fare_amount')  # Features from the testing set
+test_labels = testing_set['fare_amount']  # True fare amounts for comparison
+
+# Predict fares using the trained model
+predicted_fares = model.predict(test_input)
+
+# Evaluate the model's performance on the testing set
+mse_test = mean_squared_error(test_labels, predicted_fares)
+rmse_test = np.sqrt(mse_test)
+
+print(f"Mean Squared Error (MSE) on Testing Set: {mse_test}")
+print(f"Root Mean Squared Error (RMSE) on Testing Set: {rmse_test}")
+
+
