@@ -83,7 +83,8 @@ def feature_engineer(df):
         try:
             x = df['pickup_datetime']
         except KeyError:
-            print("Good job!")
+            # print("Good job!")
+            pass
         else:
             raise ValueError("Column `pickup_datetime' still exists")
 
