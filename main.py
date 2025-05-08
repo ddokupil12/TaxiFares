@@ -29,6 +29,7 @@ parser.add_argument("-h1", help="Defaults to len(df.columns)")
 parser.add_argument("-h2", help="Defaults to 128")
 parser.add_argument("-h3", help="Defaults to 72")
 parser.add_argument("-h4", help="Defaults to 16")
+parser.add_argument("-lr", help="Learning rate")
 
 args = parser.parse_args()
 
@@ -67,6 +68,7 @@ h1units = int(args.h1) if args.h1 else len(df.columns)
 h2units = int(args.h2) if args.h2 else 128
 h3units = int(args.h3) if args.h3 else 72
 h4units = int(args.h4) if args.h4 else 16
+lr = float(args.lr) if args.lr else None
 
 print("Epochs:", numEpochs)
 print("test size:", testSize)
@@ -74,6 +76,7 @@ print("h1", h1units)
 print("h2", h2units)
 print("h3", h3units)
 print("h4", h4units)
+print("lr", lr)
 
 
 
@@ -111,11 +114,7 @@ model = Sequential(
 
 model.summary()
 
-
-#Basic idea of what we need
-hLayer1 = Dense(15, "linear")
-
-optim = Adam()
+optim = Adam(learning_rate=lr) if lr else Adam()
 
 
 # Compile and Train the model
