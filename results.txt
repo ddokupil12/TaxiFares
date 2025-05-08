@@ -1,0 +1,328 @@
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 10 
+Layer 2: 10 
+Layer 3: 10
+MSE: 14.413850793350916
+RMSE: 3.796557755829735
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 20 
+Layer 2: 20 
+Layer 3: 20
+MSE: 14.482828664323366
+RMSE: 3.80563117817838
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 30 
+Layer 2: 30 
+Layer 3: 30
+MSE: 14.017252680630948
+RMSE: 3.7439621633546123
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 40 
+Layer 2: 40 
+Layer 3: 40
+MSE: 15.038942969937521
+RMSE: 3.8780076031304427
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 50 
+Layer 2: 50 
+Layer 3: 50
+MSE: 13.717354504590013
+RMSE: 3.7036947099605837
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 60 
+Layer 2: 60 
+Layer 3: 60
+MSE: 14.549360870418417
+RMSE: 3.8143624461262746
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 70 
+Layer 2: 70 
+Layer 3: 70
+MSE: 14.79722134018759
+RMSE: 3.846715656269331
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 80 
+Layer 2: 80 
+Layer 3: 80
+MSE: 11.88327305191521
+RMSE: 3.447212359561739
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 90 
+Layer 2: 90 
+Layer 3: 90
+MSE: 14.231246301608257
+RMSE: 3.772432411801205
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 100 
+Layer 2: 100 
+Layer 3: 100
+MSE: 14.094307092027822
+RMSE: 3.7542385502293034
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 110 
+Layer 2: 110 
+Layer 3: 110
+MSE: 15.173367693175956
+RMSE: 3.895300719222581
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 128 
+Layer 2: 72 
+Layer 3: 16
+MSE: 14.647771372577964
+RMSE: 3.8272406995873625
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.212591313088279
+RMSE: 3.4946518157161637
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 384 
+Layer 2: 216 
+Layer 3: 48
+MSE: 12.75598469908471
+RMSE: 3.571552141448408
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 512 
+Layer 2: 288 
+Layer 3: 64
+MSE: 13.836147375755688
+RMSE: 3.719697215601787
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 640 
+Layer 2: 360 
+Layer 3: 80
+MSE: 15.257497775855374
+RMSE: 3.906084711812504
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 768 
+Layer 2: 432 
+Layer 3: 96
+MSE: 14.452392153726272
+RMSE: 3.801630196866375
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 896 
+Layer 2: 504 
+Layer 3: 112
+MSE: 14.059252707202763
+RMSE: 3.749567002628805
+==========
+Epoch #: 10 
+Test Size: 0.33 
+Layer 1: 1024 
+Layer 2: 576 
+Layer 3: 128
+MSE: 13.281655873139863
+RMSE: 3.6444006191882723
+==========
+Epoch #: 10 
+Test Size: 0.1 
+Layer 1: 128 
+Layer 2: 72 
+Layer 3: 16
+MSE: 11.82085271975055
+RMSE: 3.4381466984046143
+==========
+Epoch #: 10 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 11.977599662943568
+RMSE: 3.4608668947163466
+==========
+Epoch #: 10 
+Test Size: 0.1 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.872238399449527
+RMSE: 3.5877901833091532
+==========
+Epoch #: 10 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.017299341960422
+RMSE: 3.466597660813903
+==========
+Epoch #: 10 
+Test Size: 0.3 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 14.933213051478312
+RMSE: 3.864351569342302
+==========
+Epoch #: 10 
+Test Size: 0.4 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 13.182438647753127
+RMSE: 3.6307628189890244
+==========
+Epoch #: 10 
+Test Size: 0.5 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 15.97848179330182
+RMSE: 3.9973093191923263
+==========
+Epoch #: 10 
+Test Size: 0.6 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 14.637233988425677
+RMSE: 3.8258638225145543
+==========
+Epoch #: 10 
+Test Size: 0.7 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 15.058768849658291
+RMSE: 3.8805629552499585
+==========
+Epoch #: 10 
+Test Size: 0.8 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 14.386871153766586
+RMSE: 3.7930029203477535
+==========
+Epoch #: 1 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 18.069988627309293
+RMSE: 4.250880923680325
+==========
+Epoch #: 3 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 16.16447287738687
+RMSE: 4.020506544875517
+==========
+Epoch #: 4 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.418764977871918
+RMSE: 3.524026812876417
+==========
+Epoch #: 5 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 11.366895914687158
+RMSE: 3.371482747202951
+==========
+Epoch #: 6 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 13.556871808790149
+RMSE: 3.681965753342927
+==========
+Epoch #: 7 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 14.587389622959066
+RMSE: 3.8193441351832993
+==========
+Epoch #: 8 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 13.814263274616286
+RMSE: 3.7167544006318587
+==========
+Epoch #: 9 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 13.452090377344309
+RMSE: 3.6677091456853974
+==========
+Epoch #: 10 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 16.051174126643435
+RMSE: 4.006391659167066
+==========
+Epoch #: 11 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.56040622527013
+RMSE: 3.5440663404160664
+==========
+Epoch #: 12 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 14.495789077554095
+RMSE: 3.8073335915774567
+==========
+Epoch #: 13 
+Test Size: 0.2 
+Layer 1: 256 
+Layer 2: 144 
+Layer 3: 32
+MSE: 12.198459777314739
+RMSE: 3.492629350119296
