@@ -3,17 +3,18 @@ REM filepath: c:\Users\denni\OneDrive\Desktop\TaxiFares\dennis_test.bat
 
 
 SET EPOCH=10
-SET H1=10
-SET H2=10
-SET H3=10
+SET H1=256
+SET H2=144
+SET H3=32
+SET TR=0.1
 
-
-FOR /L %%i IN (1,1,20) DO (
+FOR /L %%i IN (1,1,10) DO (
     echo Running iteration %%i
     
-    set /a H1TMP=H1 * %%i
-    set /a H2TMP=H2 * %%i
-    set /a H3TMP=H3 * %%i
+ 
+    for /f "usebackq delims=" %%A in (`powershell -Command "[math]::Round(%%i * %TR%, 2)"`) do (
+        set TRTMP=%%A
+    )
 
-    c:\Users\denni\OneDrive\Desktop\TaxiFares\taxi_fare_venv\Scripts\python.exe c:\Users\denni\OneDrive\Desktop\TaxiFares\main.py -e %EPOCH% -h1 !H1TMP! -h2 !H2TMP! -h3 !H3TMP! -t .33
+    c:\Users\denni\OneDrive\Desktop\TaxiFares\taxi_fare_venv\Scripts\python.exe c:\Users\denni\OneDrive\Desktop\TaxiFares\main.py -e %EPOCH% -h1 %H1% -h2 %H2% -h3 %H3% -t !TRTMP!
 )
