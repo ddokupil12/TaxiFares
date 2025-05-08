@@ -1,0 +1,5 @@
+NumPy<2
+Keras
+pandas
+matplotlib
+scikit-learn
