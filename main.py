@@ -76,6 +76,7 @@ print("h3", h3units)
 print("h4", h4units)
 
 
+
 # Split the dataframe into a training and testing set
 # ** YOUR CODE HERE **
 training_set, testing_set = train_test_split(df,test_size=testSize) #Not tested, check this link: https://pandas.pydata.org/docs/reference/api/pandas.Series.between.html
@@ -148,3 +149,10 @@ rmse_test = np.sqrt(mse_test)
 
 print(f"Mean Squared Error (MSE) on Testing Set: {mse_test}")
 print(f"Root Mean Squared Error (RMSE) on Testing Set: {rmse_test}")
+
+results = f"==========\nEpoch #: {numEpochs} \nTest Size: {testSize} \nLayer 1: {h1units} \nLayer 2: {h2units} \nLayer 3: {h3units}\nMSE: {mse_test}\nRMSE: {rmse_test}\n"
+
+print(results)
+
+with open("results.txt", "a") as file:
+    file.write(results)
