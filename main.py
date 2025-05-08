@@ -102,7 +102,8 @@ training_set, testing_set = train_test_split(df,test_size=testSize) #Not tested,
 # )
 # Build neural network in Keras
 model = Sequential(
-  [
+  [ 
+    Dense(len(df.columns), name= "input"),
     Dense(h1units, activation="relu", name= "hlayer1"),
     Dense(h2units, activation="relu", name="hlayer2"),
     Dense(h3units, activation="relu", name="hlayer3"),
