@@ -68,7 +68,7 @@ h1units = int(args.h1) if args.h1 else len(df.columns)
 h2units = int(args.h2) if args.h2 else 128
 h3units = int(args.h3) if args.h3 else 72
 h4units = int(args.h4) if args.h4 else 16
-lr = int(args.lr) if args.lr else None
+lr = float(args.lr) if args.lr else None
 
 print("Epochs:", numEpochs)
 print("test size:", testSize)
